@@ -6,10 +6,11 @@ import (
 	"time"
 )
 
-func main() {
-	fmt.Println("HOLA!")
+var seededRand = rand.New(rand.NewSource(time.Now().UnixNano()))
 
-	seededRand = rand.New(rand.NewSource(time.Now().UnixNano()))
+func main() {
+	fmt.Println("# STARTING")
+
 	messagesBus := make(chan string)
 	totalProducers := 2
 	totalConsumers := 1

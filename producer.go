@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"time"
 )
 
@@ -15,8 +14,6 @@ type Producer struct {
 
 const charset = "abcdefghijklmnopqrstuvwxyz" +
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
-var seededRand = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 // message creates a random message
 func (p *Producer) message() string {

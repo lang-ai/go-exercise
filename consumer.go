@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // Consumer consumes new events sent to a channel
 type Consumer struct {
@@ -18,7 +21,9 @@ func (c *Consumer) Start(ch <-chan string) {
 	go func() {
 		for {
 			msg := <-ch
-			fmt.Printf("Consumer[%v]: produced message: %q\n", c.id, msg)
+			workTime := time.Duration(400+seededRand.Intn(800)) * time.Millisecond
+			time.Sleep(workTime)
+			fmt.Printf("Consumer[%v]: received message: %q\n", c.id, msg)
 		}
 	}()
 }
