@@ -12,11 +12,10 @@ type Producer struct {
 	started    bool // whether the producer has started producing
 }
 
-const charset = "abcdefghijklmnopqrstuvwxyz" +
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
 // message creates a random message
 func (p *Producer) message() string {
+	const charset = "abcdefghijklmnopqrstuvwxyz" +
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	b := make([]byte, 10)
 	for i := range b {
 		b[i] = charset[seededRand.Intn(len(charset))]
