@@ -34,7 +34,7 @@ func (p *FProducer) Start(ch chan<- string) {
 	p.started = true
 	go func() {
 		for {
-			if seededRand.Float32() > 0.8 {
+			if seededRand.Float32() > 0.9 {
 				fmt.Printf("FProducer[%v]: FAILED\n", p.id)
 				p.failed = true
 				break

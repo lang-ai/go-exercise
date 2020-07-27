@@ -18,6 +18,10 @@ func main() {
 		p := NewProducer(500 + seededRand.Intn(500))
 		p.Start(messagesBus)
 	}
+	// for i := 0; i < totalProducers; i++ {
+	// 	p := NewFProducer(500 + seededRand.Intn(500))
+	// 	p.Start(messagesBus)
+	// }
 	for i := 0; i < totalConsumers; i++ {
 		c := NewConsumer()
 		c.Start(messagesBus)

@@ -7,4 +7,4 @@ Some producers produce messages that are consumed by consumers
 
 ## Run
 
-    go run .
+    go run ./routines
