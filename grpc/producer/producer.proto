@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package main;
+
+service Producer {
+  rpc GetMessage (Empty) returns (Message) {}
+}
+
+message Empty {
+}
+
+message Message {
+  string payload = 1;
+}
