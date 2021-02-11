@@ -16,3 +16,7 @@ Some producers produce messages that are consumed by consumers
     cd ./grpc && ./gen.sh && cd -
     go run ./grpc/producer
     go run ./grpc/consumer
+
+## GRPC
+
+Instalation instructions [here](https://grpc.io/docs/protoc-installation/)
